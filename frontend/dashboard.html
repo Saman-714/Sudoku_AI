@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Algorithm Comparison</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="back-link badge" href="index.html">← Back</a>
+    </header>
+    <h1 class="page-title">Algorithm Comparison</h1>
+    <section class="selector-row card">
+      <div id="difficultyButtons" class="difficulty-buttons"></div>
+      <button id="runBtn" class="btn">Run Comparison</button>
+    </section>
+    <p id="status" class="status"></p>
+    <section id="results" class="results hidden"></section>
+  </div>
+  <script src="dashboard.js"></script>
+</body>
+</html>

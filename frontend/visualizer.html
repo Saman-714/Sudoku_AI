@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Step Visualizer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="visualizer.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="badge back-link" href="index.html">← Back</a>
+      <div class="badge title-badge">Step Visualizer</div>
+    </header>
+    <section class="selector-row card">
+      <div class="selector-group">
+        <label class="pill-label" for="difficultySelect">Difficulty</label>
+        <select id="difficultySelect" class="pill-select"><option value="easy">Easy</option><option value="medium">Medium</option><option value="hard">Hard</option><option value="expert">Expert</option></select>
+      </div>
+      <div class="selector-group">
+        <label class="pill-label" for="algorithmSelect">Algorithm</label>
+        <select id="algorithmSelect" class="pill-select"><option value="backtracking">Backtracking</option><option value="ac3_mrv">AC-3 + MRV</option><option value="forward_checking">Forward Checking</option></select>
+      </div>
+      <button id="loadBtn" class="btn">Load Puzzle</button>
+    </section>
+    <main class="board-card card"><div id="grid" class="sudoku-grid"></div></main>
+    <section class="player-card card">
+      <div class="controls-row">
+        <button id="resetBtn" class="circle-btn small" disabled>⏮</button>
+        <button id="backBtn" class="circle-btn small" disabled>⏪</button>
+        <button id="playBtn" class="circle-btn play-btn" disabled>▶</button>
+        <button id="fwdBtn" class="circle-btn small" disabled>⏩</button>
+        <button id="endBtn" class="circle-btn small" disabled>⏭</button>
+      </div>
+      <div id="stepCounter" class="step-counter">Step 0 / 0</div>
+      <label class="speed-label">Speed <span>🐢</span><input id="speedSlider" type="range" min="0" max="100" value="50"><span>🐇</span></label>
+    </section>
+    <section id="metrics" class="metrics hidden"><div class="metric-card"><span>⏱</span><div><div>Time</div><strong id="metricTime">0.00s</strong></div></div><div class="metric-card"><span>⚡</span><div><div>States</div><strong id="metricStates">0</strong></div></div><div class="metric-card"><span>↩</span><div><div>Backtracks</div><strong id="metricBacktracks">0</strong></div></div></section>
+    <section class="actions"><button id="solveBtn" class="btn btn-secondary" disabled>Solve</button></section>
+    <p id="errorMessage" class="error-message" aria-live="polite"></p>
+  </div>
+  <script src="visualizer.js"></script>
+</body>
+</html>

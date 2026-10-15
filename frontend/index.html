@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sudoku AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div id="difficultyBadge" class="badge">Easy</div>
+      <div class="topbar-right">
+        <div id="timer" class="timer">00:00</div>
+        <a class="badge compare-link" href="dashboard.html">📊 Compare</a>
+        <a class="badge compare-link" href="visualizer.html">▶ Visualize</a>
+      </div>
+    </header>
+
+    <section class="selector-row card">
+      <div class="selector-group">
+        <label class="pill-label" for="difficultySelect">Difficulty</label>
+        <select id="difficultySelect" class="pill-select">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+          <option value="expert">Expert</option>
+        </select>
+      </div>
+      <div class="selector-group">
+        <label class="pill-label" for="algorithmSelect">Algorithm</label>
+        <select id="algorithmSelect" class="pill-select">
+          <option value="backtracking">Backtracking</option>
+          <option value="ac3_mrv">AC-3 + MRV</option>
+          <option value="forward_checking">Forward Checking</option>
+          <option value="simulated_annealing">Simulated Annealing</option>
+        </select>
+      </div>
+    </section>
+
+    <main class="board-card card">
+      <div id="grid" class="sudoku-grid" aria-label="Sudoku board"></div>
+    </main>
+
+    <section class="actions">
+      <button id="newPuzzleBtn" class="btn">New Puzzle</button>
+      <button id="solveBtn" class="btn btn-secondary">Solve</button>
+    </section>
+
+    <p id="errorMessage" class="error-message" aria-live="polite"></p>
+
+    <section id="metrics" class="metrics hidden">
+      <div class="metric-card"><span>⏱</span><div><div>Time</div><strong id="metricTime">0.00s</strong></div></div>
+      <div class="metric-card"><span>⚡</span><div><div>States</div><strong id="metricStates">0</strong></div></div>
+      <div class="metric-card"><span>↩</span><div><div>Backtracks</div><strong id="metricBacktracks">0</strong></div></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
